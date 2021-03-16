@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+## SPA небольшого интернет магазина на React, TypeScript, styled-components, material-ui с использованием псевдо-БД fakestoreAPI
+
+`https://fakestoreapi.com/`
+Fake store rest API for your e-commerce or shopping website prototype
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -43,4 +48,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React documentation](https://reactjs.org/). -->
