@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 // // Components
-  import Item from './item/item';
+import Item from './item/item';
 import Cart from './Cart/Cart';
+
 import Drawer from '@material-ui/core/Drawer';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Grid from '@material-ui/core/Grid';
@@ -22,11 +23,11 @@ export type CartItemType = {
 
 const url = "https://fakestoreapi.com/products"
 
-const App = () => {
-const [isLoading, setisLoading] = useState(false);
-const [isError, setIsError] = useState(false);
+const App: React.FC = () => {
+const [isLoading, setisLoading] = useState<boolean>(false);
+const [isError, setIsError] = useState<boolean>(false);
+const [cartOpen, setCartOpen] = useState<boolean>(false);
 const [data, setData] = useState([]);
-const [cartOpen, setCartOpen] = useState(false);
 const [cartItems, setCartItems] = useState([] as CartItemType[]);
 
 
@@ -35,12 +36,13 @@ const [cartItems, setCartItems] = useState([] as CartItemType[]);
     try {
       const response = await fetch(url);
       const data = await response.json();
+        console.log("App__getProducts", data);
       setisLoading(false);
       setIsError(false);
       setData(data);
       return data;
     } catch (error) {
-        console.log(error);
+        console.log("Ошибка", error);
          setisLoading(false);
          setIsError(true)
          return error;
@@ -92,7 +94,6 @@ const [cartItems, setCartItems] = useState([] as CartItemType[]);
   
   return (
     <div className="App">
-      Раз. Два. Погнали!
       <Wrapper>
         <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
               <Cart cartItems={cartItems} addToCart={   handleAddToCart   }  removeFromCart={   handleRemoveFromCart  }   />
